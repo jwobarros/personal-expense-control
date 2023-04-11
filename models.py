@@ -25,7 +25,6 @@ class Category(Model):
 class Expense(Model):
     user = ForeignKeyField(User, backref='expenses')
     category = ForeignKeyField(Category, backref='expenses')
-    description = CharField(null = True)
     amount = FloatField()
     created_date = DateTimeField(default=datetime.datetime.now)
 
@@ -36,7 +35,6 @@ class Expense(Model):
 class Income(Model):
     user = ForeignKeyField(User, backref='incomes')
     category = ForeignKeyField(Category, backref='incomes')
-    description = CharField(null = True)
     amount = FloatField()
     created_date = DateTimeField(default=datetime.datetime.now)
 
