@@ -30,15 +30,14 @@ class UserModelTestCase(BaseModelTestCase):
 
 class ExpenseModelTestCase(BaseModelTestCase):
     def test_create_expense(self):
-        expense = Expense.create(user=self.user, category=self.category, amount=50, description='test')
+        expense = Expense.create(user=self.user, category=self.category, amount=50)
 
         self.assertEqual(expense.user, self.user)
         self.assertEqual(expense.category, self.category)
         self.assertEqual(expense.amount, 50)
-        self.assertEqual(expense.description, 'test')
 
     def test_delete_expense(self):
-        expense = Expense.create(user=self.user, category=self.category, amount=50, description='test')
+        expense = Expense.create(user=self.user, category=self.category, amount=50)
 
         Expense.delete().where(Expense.id == expense.id).execute()
 
@@ -47,15 +46,14 @@ class ExpenseModelTestCase(BaseModelTestCase):
 
 class IncomeModelTestCase(BaseModelTestCase):
     def test_create_income(self):
-        income = Income.create(user=self.user, category=self.category, amount=1000, description='test')
+        income = Income.create(user=self.user, category=self.category, amount=1000)
 
         self.assertEqual(income.user, self.user)
         self.assertEqual(income.category, self.category)
         self.assertEqual(income.amount, 1000)
-        self.assertEqual(income.description, 'test')
 
     def test_delete_income(self):
-        income = Income.create(user=self.user, category=self.category, amount=1000, description='test')
+        income = Income.create(user=self.user, category=self.category, amount=1000)
 
         Income.delete().where(Income.id == income.id).execute()
 
