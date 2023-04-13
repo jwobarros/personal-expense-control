@@ -18,7 +18,7 @@ This is a Telegram bot that helps you keep track of your expenses and incomes. Y
 1. Create a new bot using the [BotFather](https://t.me/botfather) on Telegram.
 2. Copy the API token provided by the BotFather.
 3. Create a new file named `.env` in the project directory.
-4. Inside the `.env` file, add the following line: `TELEGRAM_API_KEY=<your-API-token>`
+4. Inside the `.env` file, add the following lines: `TELEGRAM_API_KEY=<your-API-token>` `LOCALE_LANG=<en_US or pt_BR>`
 5. Create a new database using SQLite or another database management system.
 
 ## Usage
@@ -45,15 +45,11 @@ This is a Telegram bot that helps you keep track of your expenses and incomes. Y
 
 <categoria>
 
+<categoria>
 
 <categoria>
 
-
 <categoria>
-
-
-<categoria>
-
 
 ## Contributing
 

@@ -1,0 +1,141 @@
+# Portuguese bot message translations.
+# Johnnatan William de Oliveira Barros johnnatanwillian@hotmail.com, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0.0\n"
+"Report-Msgid-Bugs-To: johnnatanwillian@hotmail.com\n"
+"POT-Creation-Date: 2023-04-12 08:56-0400\n"
+"PO-Revision-Date: 2023-04-12 08:56-0400\n"
+"Last-Translator: Johnnatan William de Oliveira Barros johnnatanwillian@hotmail.com\n"
+"Language-Team: Brazilian Portuguese\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: bot.py:22
+#, python-brace-format
+msgid "categories_list"
+msgstr "List of categories: \n {categories}"
+
+#: bot.py:24
+msgid "no_categories_registered"
+msgstr "Você não tem nenhuma categoria registrada."
+
+#: bot.py:34
+msgid "new_category"
+msgstr "Utilize /add_category <categoria> para adicionar uma nova categoria."
+
+#: bot.py:42
+#, python-brace-format
+msgid "category_already_exists"
+msgstr "A categoria {category_name} já existe."
+
+#: bot.py:45
+#, python-brace-format
+msgid "category_added"
+msgstr ""
+
+#: bot.py:55
+msgid "remove_category_command"
+msgstr "Use /remove_category <categoria> para deletar uma categoria."
+
+#: bot.py:63
+#, python-brace-format
+msgid "category_deleted_notification"
+msgstr "A categoria {category.name} foi deletada."
+
+#: bot.py:66 bot.py:152 bot.py:240
+msgid "category_not_found_error"
+msgstr "A categoria não existe."
+
+#: bot.py:76
+msgid "set_limit_command"
+msgstr "Use /set_limit <categoria> <limite> para definir um limite de gastos para uma categoria."
+
+#: bot.py:87 bot.py:168 bot.py:256
+msgid "invalid_value_error"
+msgstr "Erro no valor fornecido, por favor digite um valor válido."
+
+#: bot.py:111 bot.py:199
+msgid "incomes_command"
+msgstr "Use /incomes <mês-ano: Opcional> para mostrar os rendimentos registrados para o mês."
+
+#: bot.py:143
+msgid "add_income_command"
+msgstr "Use /add_income <categoria> <valor> para adicionar um novo rendimento."
+
+#: bot.py:162 bot.py:250
+#, python-brace-format
+msgid "income_added_notification"
+msgstr "Valor adicionado à categoria {category_name}."
+
+#: bot.py:177
+msgid "remove_income_command"
+msgstr "Use /remove_income <id_do_rendimento> para deletar um rendimento."
+
+#: bot.py:186
+#, python-brace-format
+msgid "income_deleted_notification"
+msgstr "O rendimento {income_id} foi deletado."
+
+#: bot.py:188
+#, python-brace-format
+msgid "income_not_found_error"
+msgstr "O rendimento {income_id} não existe."
+
+#: bot.py:218
+#, python-brace-format
+msgid "expenses_list"
+msgstr "Lista de gastos ({mês}-{ano}): \n{expenses}"
+
+#: bot.py:220
+msgid "no_expenses_recorded"
+msgstr "Você não tem nenhum gasto registrado."
+
+#: bot.py:231
+msgid "add_expense_command"
+msgstr "Use /add_expense <categoria> <valor> para adicionar um novo gasto."
+
+#: bot.py:265
+msgid "remove_expense_command"
+msgstr "Use /remove_expense <id_do_gasto> para deletar um gasto."
+
+#: bot.py:274
+#, python-brace-format
+msgid "expense_deleted_notification"
+msgstr "O gasto {expense_id} foi deletado."
+
+#: bot.py:276
+#, python-brace-format
+msgid "expense_not_found_error"
+msgstr "O gasto {expense_id} não existe."
+
+#: bot.py:287
+msgid "report_command"
+msgstr "Use /report <mês-ano: Opcional> para gerar o relatório de gastos para o mês."
+
+#: bot.py:305
+msgid "command_list"
+msgstr ""
+"Lista de comandos disponíveis para este bot:\n"
+"/start: Inicie uma conversa com o bot.\n"
+"/help: Obtenha ajuda sobre como usar o bot e seus comandos disponíveis.\n"
+"/categories: Visualize uma lista de suas categorias de despesas e receitas.\n"
+"/add_category <category>: Adicione uma nova categoria de despesa ou receita.\n"
+"/remove_category <category_id>: Remova uma categoria de despesa ou receita existente.\n"
+"/set_limit <category> <limit_amount>: Defina um limite de gastos para uma categoria de despesas.\n"
+"/expenses <month-year: Opcional>: Veja uma lista de suas despesas registradas, o padrão é o mês e ano atual.\n"
+"/add_expense <category> <amount>: Adicione uma nova despesa.\n"
+"/remove_expense <expense_id>: Remova uma despesa existente.\n"
+"/incomes <month-year: Opcional>: Veja uma lista de seus rendimentos registrados, o padrão é o mês e ano atual.\n"
+"/add_income <category> <amount>: Adicione uma nova renda.\n"
+"/remove_income <income_id>: Remova uma renda existente.\n"
+"/report <month-year: Opcional>: Mostra um relatório mensal de despesas por categoria."
+
+#: bot.py:328
+msgid "hello"
+msgstr "Oi, {first_name}! Eu sou seu assistente pessoal de finanças. Digite /help para ver a lista de comandos disponíveis."
