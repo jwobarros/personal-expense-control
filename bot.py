@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import telebot, os, datetime
 from models import User, Category, Limit, Income, Expense
 from helpers import snake_case, monthly_report
