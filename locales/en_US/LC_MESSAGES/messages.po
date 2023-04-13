@@ -145,3 +145,53 @@ msgstr "Hi, {first_name}! I am your personal finance assistant. Type /help to se
 msgid "expense_for_the_month"
 msgstr "Expenses for the {year}-{month}"
 
+
+#: commands
+
+#: bot.py:15
+msgid "categories"
+msgstr "categories"
+
+#: bot.py:29
+msgid "add_category"
+msgstr "add_category"
+
+#: bot.py:50
+msgid "remove_category"
+msgstr "remove_category"
+
+#: bot.py:71
+msgid "set_limit"
+msgstr "set_limit"
+
+#: bot.py:105
+msgid "incomes"
+msgstr "incomes"
+
+#: bot.py:137
+msgid "add_income"
+msgstr "add_income"
+
+#: bot.py:172
+msgid "remove_income"
+msgstr "remove_income"
+
+#: bot.py:193
+msgid "expenses"
+msgstr "expenses"
+
+#: bot.py:225
+msgid "add_expense"
+msgstr "add_expense"
+
+#: bot.py:260
+msgid "remove_expense"
+msgstr "remove_expense"
+
+#: bot.py:281
+msgid "report"
+msgstr "report"
+
+#: bot.py:303
+msgid "help"
+msgstr "help"

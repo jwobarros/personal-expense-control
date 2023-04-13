@@ -129,3 +129,53 @@ msgstr ""
 msgid "expense_for_the_month"
 msgstr ""
 
+
+#: commands
+
+#: bot.py:15
+msgid "categories"
+msgstr ""
+
+#: bot.py:29
+msgid "add_category"
+msgstr ""
+
+#: bot.py:50
+msgid "remove_category"
+msgstr ""
+
+#: bot.py:71
+msgid "set_limit"
+msgstr ""
+
+#: bot.py:105
+msgid "incomes"
+msgstr ""
+
+#: bot.py:137
+msgid "add_income"
+msgstr ""
+
+#: bot.py:172
+msgid "remove_income"
+msgstr ""
+
+#: bot.py:193
+msgid "expenses"
+msgstr ""
+
+#: bot.py:225
+msgid "add_expense"
+msgstr ""
+
+#: bot.py:260
+msgid "remove_expense"
+msgstr ""
+
+#: bot.py:281
+msgid "report"
+msgstr ""
+
+#: bot.py:303
+msgid "help"
+msgstr ""
