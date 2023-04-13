@@ -139,3 +139,8 @@ msgstr ""
 #: bot.py:328
 msgid "hello"
 msgstr "Oi, {first_name}! Eu sou seu assistente pessoal de finanças. Digite /help para ver a lista de comandos disponíveis."
+
+#: helpers.py:51 helpers.py:55
+msgid "expense_for_the_month"
+msgstr "Gastos do mês {month}-{year}"
+

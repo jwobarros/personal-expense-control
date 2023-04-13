@@ -1,7 +1,12 @@
 import matplotlib.pyplot as plt
 from re import sub
 from models import Expense
+import gettext
+import os
 
+LANG = os.getenv("LOCALE_LANG")
+lang = gettext.translation('messages', localedir='locales', languages=[LANG])
+_ = lang.gettext
 
 def snake_case(text):
     """
@@ -28,7 +33,7 @@ def monthly_report(user_id, month, year):
     )
 
     if not expenses:
-        return f"Não há despesas registradas para o mês {month} de {year}."
+        return _("no_expenses_recorded")
 
     # Groups expenses by category and sums their corresponding values
     categories = {}
@@ -43,11 +48,11 @@ def monthly_report(user_id, month, year):
     # Create the pie chart
     fig, ax = plt.subplots()
     ax.pie(list(categories.values()), labels=list(categories.keys()), autopct="%1.1f%%")
-    ax.set_title(f"Gastos do mês {month} de {year}")
+    ax.set_title(_("expense_for_the_month").format(month=month, year=year))
     plt.savefig(f"temp/{user_id}-{month}-{year}.png")
 
     total = sum(categories.values())
-    report = f"Gastos do mês {month} de {year}:\n"
+    report = _("expense_for_the_month").format(month=month, year=year)
     for category, value in categories.items():
         report += f"\n- {category}: R${value:.2f} ({(value/total)*100:.1f}%)"
     report += f"\n\nTotal: R${total:.2f}"

@@ -124,3 +124,8 @@ msgstr ""
 #: bot.py:328
 msgid "hello"
 msgstr ""
+
+#: helpers.py:51 helpers.py:55
+msgid "expense_for_the_month"
+msgstr ""
+

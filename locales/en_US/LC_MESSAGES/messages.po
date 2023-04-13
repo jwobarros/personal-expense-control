@@ -92,7 +92,7 @@ msgstr "The income {income_id} does not exist."
 msgid "expenses_list"
 msgstr "List of expenses ({month}-{year}): \n{expenses}"
 
-#: bot.py:220
+#: bot.py:220 helpers.py:36
 msgid "no_expenses_recorded"
 msgstr "You don't have any expense recorded."
 
@@ -139,3 +139,9 @@ msgstr ""
 #: bot.py:328
 msgid "hello"
 msgstr "Hi, {first_name}! I am your personal finance assistant. Type /help to see the list of available commands."
+
+
+#: helpers.py:51 helpers.py:55
+msgid "expense_for_the_month"
+msgstr "Expenses for the {year}-{month}"
+
