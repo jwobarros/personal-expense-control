@@ -1,7 +1,14 @@
-from peewee import SqliteDatabase, Model, CharField, FloatField, ForeignKeyField, DateTimeField
+from peewee import (
+    SqliteDatabase,
+    Model,
+    CharField,
+    FloatField,
+    ForeignKeyField,
+    DateTimeField,
+)
 import datetime
 
-db = SqliteDatabase('persistence.db')
+db = SqliteDatabase("persistence.db")
 
 
 class User(Model):
@@ -15,7 +22,7 @@ class User(Model):
 
 
 class Category(Model):
-    user = ForeignKeyField(User, backref='categories')
+    user = ForeignKeyField(User, backref="categories")
     name = CharField()
 
     class Meta:
@@ -23,8 +30,8 @@ class Category(Model):
 
 
 class Expense(Model):
-    user = ForeignKeyField(User, backref='expenses')
-    category = ForeignKeyField(Category, backref='expenses')
+    user = ForeignKeyField(User, backref="expenses")
+    category = ForeignKeyField(Category, backref="expenses")
     amount = FloatField()
     created_date = DateTimeField(default=datetime.datetime.now)
 
@@ -33,8 +40,8 @@ class Expense(Model):
 
 
 class Income(Model):
-    user = ForeignKeyField(User, backref='incomes')
-    category = ForeignKeyField(Category, backref='incomes')
+    user = ForeignKeyField(User, backref="incomes")
+    category = ForeignKeyField(Category, backref="incomes")
     amount = FloatField()
     created_date = DateTimeField(default=datetime.datetime.now)
 
@@ -43,11 +50,12 @@ class Income(Model):
 
 
 class Limit(Model):
-    user = ForeignKeyField(User, backref='limits')
-    category = ForeignKeyField(Category, backref='limits')
+    user = ForeignKeyField(User, backref="limits")
+    category = ForeignKeyField(Category, backref="limits")
     amount = FloatField()
 
     class Meta:
         database = db
+
 
 db.create_tables([User, Category, Expense, Income, Limit])

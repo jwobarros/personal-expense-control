@@ -2,17 +2,16 @@ import telebot, os, datetime
 from models import User, Category, Limit, Income, Expense
 from helpers import snake_case, monthly_report
 import gettext
-import os
 
 LANG = os.getenv("LOCALE_LANG")
-lang = gettext.translation('messages', localedir='locales', languages=[LANG])
+lang = gettext.translation("messages", localedir="locales", languages=[LANG])
 _ = lang.gettext
 
 APY_KEY = os.getenv("TELEGRAM_API_KEY")
 bot = telebot.TeleBot(APY_KEY)
 
 
-@bot.message_handler(commands=["categories"])
+@bot.message_handler(commands=[_("categories")])
 def show_categories(message):
     categories = ""
     for category in Category.select().where(Category.user == message.from_user.id):
@@ -26,7 +25,7 @@ def show_categories(message):
     bot.send_message(chat_id=message.chat.id, text=response)
 
 
-@bot.message_handler(commands=["add_category"])
+@bot.message_handler(commands=[_("add_category")])
 def add_category(message):
     if len(message.text.split()) < 2:
         bot.send_message(
@@ -35,7 +34,7 @@ def add_category(message):
         )
         return None
 
-    category_name = snake_case(' '.join(message.text.split()[1:]))
+    category_name = snake_case(" ".join(message.text.split()[1:]))
 
     try:
         Category.get(name=category_name, user_id=message.from_user.id)
@@ -47,7 +46,7 @@ def add_category(message):
     bot.send_message(chat_id=message.chat.id, text=response)
 
 
-@bot.message_handler(commands=["remove_category"])
+@bot.message_handler(commands=[_("remove_category")])
 def remove_category(message):
     if len(message.text.split()) < 2:
         bot.send_message(
@@ -56,7 +55,7 @@ def remove_category(message):
         )
         return None
 
-    category_name = snake_case(' '.join(message.text.split()[1:]))
+    category_name = snake_case(" ".join(message.text.split()[1:]))
 
     try:
         category = Category.get(name=category_name, user_id=message.from_user.id)
@@ -68,7 +67,7 @@ def remove_category(message):
     bot.send_message(chat_id=message.chat.id, text=response)
 
 
-@bot.message_handler(commands=["set_limit"])
+@bot.message_handler(commands=[_("set_limit")])
 def set_limit(message):
     if len(message.text.split()) < 3:
         bot.send_message(
@@ -77,7 +76,7 @@ def set_limit(message):
         )
         return None
 
-    category_name = snake_case(' '.join(message.text.split()[1:-1]))
+    category_name = snake_case(" ".join(message.text.split()[1:-1]))
 
     try:
         limit_amount = float(message.text.split()[-1])
@@ -102,7 +101,7 @@ def set_limit(message):
     bot.send_message(chat_id=message.chat.id, text=response)
 
 
-@bot.message_handler(commands=["incomes"])
+@bot.message_handler(commands=[_("incomes")])
 def show_incomes(message):
     msg = message.text.split()
     if len(msg) > 2:
@@ -134,7 +133,7 @@ def show_incomes(message):
     bot.send_message(chat_id=message.chat.id, text=response)
 
 
-@bot.message_handler(commands=["add_income"])
+@bot.message_handler(commands=[_("add_income")])
 def add_income(message):
     msg = message.text.split()
     if len(msg) <= 2:
@@ -144,7 +143,7 @@ def add_income(message):
         )
         return None
 
-    category_name = snake_case(' '.join(message.text.split()[1:-1]))
+    category_name = snake_case(" ".join(message.text.split()[1:-1]))
 
     try:
         category_id = Category.get(name=category_name, user_id=message.from_user.id)
@@ -169,7 +168,7 @@ def add_income(message):
         )
 
 
-@bot.message_handler(commands=["remove_income"])
+@bot.message_handler(commands=[_("remove_income")])
 def remove_income(message):
     if len(message.text.split()) != 2:
         bot.send_message(
@@ -190,7 +189,7 @@ def remove_income(message):
     bot.send_message(chat_id=message.chat.id, text=response)
 
 
-@bot.message_handler(commands=["expenses"])
+@bot.message_handler(commands=[_("expenses")])
 def show_expenses(message):
     msg = message.text.split()
     if len(msg) > 2:
@@ -222,7 +221,7 @@ def show_expenses(message):
     bot.send_message(chat_id=message.chat.id, text=response)
 
 
-@bot.message_handler(commands=["add_expense"])
+@bot.message_handler(commands=[_("add_expense")])
 def add_expense(message):
     msg = message.text.split()
     if not (2 < len(msg) < 5):
@@ -232,7 +231,7 @@ def add_expense(message):
         )
         return None
 
-    category_name = snake_case(' '.join(message.text.split()[1:-1]))
+    category_name = snake_case(" ".join(message.text.split()[1:-1]))
 
     try:
         category_id = Category.get(name=category_name, user_id=message.from_user.id)
@@ -257,7 +256,7 @@ def add_expense(message):
         )
 
 
-@bot.message_handler(commands=["remove_expense"])
+@bot.message_handler(commands=[_("remove_expense")])
 def remove_expense(message):
     if len(message.text.split()) != 2:
         bot.send_message(
@@ -278,7 +277,7 @@ def remove_expense(message):
     bot.send_message(chat_id=message.chat.id, text=response)
 
 
-@bot.message_handler(commands=["report"])
+@bot.message_handler(commands=[_("report")])
 def show_monthly_report(message):
     msg = message.text.split()
     if len(msg) > 2:
@@ -296,11 +295,11 @@ def show_monthly_report(message):
     response = monthly_report(message.from_user.id, month, year)
     bot.send_message(chat_id=message.chat.id, text=response)
     # sendPhoto
-    with open(f'temp/{message.from_user.id}-{month}-{year}.png', 'rb') as photo:
+    with open(f"temp/{message.from_user.id}-{month}-{year}.png", "rb") as photo:
         bot.send_photo(chat_id=message.chat.id, photo=photo)
 
 
-@bot.message_handler(commands=["help"])
+@bot.message_handler(commands=[_("help")])
 def show_commands(message):
     response = _("command_list")
     bot.send_message(chat_id=message.chat.id, text=response)
@@ -330,5 +329,5 @@ def start(message):
     bot.send_message(chat_id=message.chat.id, text=response)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     bot.polling()

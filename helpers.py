@@ -5,8 +5,9 @@ import gettext
 import os
 
 LANG = os.getenv("LOCALE_LANG")
-lang = gettext.translation('messages', localedir='locales', languages=[LANG])
+lang = gettext.translation("messages", localedir="locales", languages=[LANG])
 _ = lang.gettext
+
 
 def snake_case(text):
     """

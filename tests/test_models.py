@@ -3,7 +3,7 @@ from peewee import SqliteDatabase
 from models import Expense, Income, Limit, User, Category
 
 
-test_db = SqliteDatabase(':memory:')
+test_db = SqliteDatabase(":memory:")
 
 
 class BaseModelTestCase(unittest.TestCase):
@@ -11,8 +11,10 @@ class BaseModelTestCase(unittest.TestCase):
         test_db.bind([Expense, Income, Limit, User, Category])
         test_db.connect()
         test_db.create_tables([Expense, Income, Limit, User, Category])
-        self.user = User.create(user_id='123', first_name='John', last_name='Doe', username='johndoe')
-        self.category = Category.create(user=self.user, name='Food')
+        self.user = User.create(
+            user_id="123", first_name="John", last_name="Doe", username="johndoe"
+        )
+        self.category = Category.create(user=self.user, name="Food")
         self.limit = Limit.create(user=self.user, category=self.category, amount=500.0)
 
     def tearDown(self):
@@ -22,10 +24,10 @@ class BaseModelTestCase(unittest.TestCase):
 
 class UserModelTestCase(BaseModelTestCase):
     def test_create_user(self):
-        self.assertEqual(self.user.user_id, '123')
-        self.assertEqual(self.user.first_name, 'John')
-        self.assertEqual(self.user.last_name, 'Doe')
-        self.assertEqual(self.user.username, 'johndoe')
+        self.assertEqual(self.user.user_id, "123")
+        self.assertEqual(self.user.first_name, "John")
+        self.assertEqual(self.user.last_name, "Doe")
+        self.assertEqual(self.user.username, "johndoe")
 
 
 class ExpenseModelTestCase(BaseModelTestCase):

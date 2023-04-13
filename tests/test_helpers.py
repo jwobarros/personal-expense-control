@@ -1,8 +1,8 @@
 import unittest
 from helpers import snake_case
 
-class TestSnakeCase(unittest.TestCase):
 
+class TestSnakeCase(unittest.TestCase):
     def test_snake_case(self):
         self.assertEqual(snake_case("HelloWorld"), "hello_world")
         self.assertEqual(snake_case("Hello-World"), "hello_world")
