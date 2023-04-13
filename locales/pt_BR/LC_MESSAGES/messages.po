@@ -153,44 +153,44 @@ msgstr ""
 
 #: bot.py:29
 msgid "add_category"
-msgstr ""
+msgstr "adicionar_categoria"
 
 #: bot.py:50
 msgid "remove_category"
-msgstr ""
+msgstr "remover_categoria"
 
 #: bot.py:71
 msgid "set_limit"
-msgstr ""
+msgstr "definir_limite"
 
 #: bot.py:105
 msgid "incomes"
-msgstr ""
+msgstr "receitas"
 
 #: bot.py:137
 msgid "add_income"
-msgstr ""
+msgstr "adicionar_receita"
 
 #: bot.py:172
 msgid "remove_income"
-msgstr ""
+msgstr "remover_receita"
 
 #: bot.py:193
 msgid "expenses"
-msgstr ""
+msgstr "despesas"
 
 #: bot.py:225
 msgid "add_expense"
-msgstr ""
+msgstr "adicionar_despesa"
 
 #: bot.py:260
 msgid "remove_expense"
-msgstr ""
+msgstr "remover_despesa"
 
 #: bot.py:281
 msgid "report"
-msgstr ""
+msgstr "relatorio"
 
 #: bot.py:303
 msgid "help"
-msgstr ""
+msgstr "ajuda"
