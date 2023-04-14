@@ -122,7 +122,6 @@ msgstr "Use /report <mês-ano: Opcional> para gerar o relatório de gastos para 
 msgid "command_list"
 msgstr ""
 "Lista de comandos disponíveis para este bot:\n"
-"/start: Inicie uma conversa com o bot.\n"
 "/help: Obtenha ajuda sobre como usar o bot e seus comandos disponíveis.\n"
 "/categories: Visualize uma lista de suas categorias de despesas e receitas.\n"
 "/add_category <category>: Adicione uma nova categoria de despesa ou receita.\n"

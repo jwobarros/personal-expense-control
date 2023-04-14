@@ -122,7 +122,6 @@ msgstr "Use /report <month-year: Optional> to generate the report of expenses fo
 msgid "command_list"
 msgstr ""
 "List of available commands for this bot:\n"
-"/start: Start a conversation with the bot.\n"
 "/help: Get help on how to use the bot and its available commands.\n"
 "/categories: View a list of your expense and income categories.\n"
 "/add_category <category>: Add a new expense or income category.\n"

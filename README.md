@@ -30,7 +30,6 @@ This is a Telegram bot that helps you keep track of your expenses and incomes. Y
 
 ## Available Commands
 
-* `/start`: Start a conversation with the bot.
 * `/help`: Get help on how to use the bot and its available commands.
 * `/categories`: View a list of your expense and income categories.
 * `/add_category <category>`: Add a new expense or income category.
