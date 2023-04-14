@@ -149,7 +149,7 @@ msgstr "Gastos do mês {month}-{year}"
 
 #: bot.py:15
 msgid "categories"
-msgstr ""
+msgstr "categorias"
 
 #: bot.py:29
 msgid "add_category"
